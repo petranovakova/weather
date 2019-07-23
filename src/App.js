@@ -4,7 +4,7 @@ import Test from './component/Test'
 
 function App() {
     return <div>
-        <Test></Test>
+        <Test />
     </div>;
 
 }
