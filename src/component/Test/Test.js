@@ -1,9 +1,37 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 
+
+const cityList = require('./city.list.json');
+console.log(cityList[23])
+
+const niceList = cityList.map(city => ( {name: city.name, id: city.id}))
+console.log(niceList[2])
+
+
 class Test extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            city: '',
+        }
+        this.findCity = this.findCity.bind(this);
+    }
+
+    findCity (event) {
+        this.setState({city: event.target.value})
+
+    }
     render() {
-        return <div>Test</div>;
+        console.log(this.state.city)
+        return (
+            <form>
+                <input
+                    type="text"
+                    onChange={this.findCity}
+                />
+            </form>
+        );
     }
 
     static apiKey = '94bfa8b7d67109e191ec4aef03ce391e';
@@ -14,5 +42,4 @@ class Test extends Component {
     }
 
 }
-
 export default Test;
