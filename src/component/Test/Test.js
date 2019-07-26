@@ -3,10 +3,11 @@ import axios from 'axios'
 
 
 const cityList = require('./city.list.json');
-console.log(cityList[23])
 
 const niceList = cityList.map(city => ( {name: city.name, id: city.id}))
-console.log(niceList[2])
+
+const finalList = {};
+niceList.forEach(item => finalList[item.name] = item.id);
 
 
 class Test extends Component {
@@ -16,12 +17,16 @@ class Test extends Component {
             city: '',
         }
         this.findCity = this.findCity.bind(this);
+        this.findCityId = this.findCityId.bind(this);
     }
 
     findCity (event) {
         this.setState({city: event.target.value})
-
     }
+    findCityId ({city}) {
+        return finalList.city;
+    }
+
     render() {
         console.log(this.state.city)
         return (
@@ -37,6 +42,7 @@ class Test extends Component {
     static apiKey = '94bfa8b7d67109e191ec4aef03ce391e';
 
     componentDidMount() {
+        console.log('niceList', niceList);
         // axios.get('https://openweathermap.org/data/2.5/forecast?id=524901&appid=94bfa8b7d67109e191ec4aef03ce391e')
       console.log(axios.get('http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=' + Test.apiKey));
     }
