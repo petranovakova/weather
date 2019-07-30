@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 
-
+//uploading JSON file
 const cityList = require('./city.list.json');
-
-const niceList = cityList.map(city => ( {name: city.name, id: city.id}))
-
+//getting needed values (name and id)
+const niceList = cityList.map(city => ( {name: city.name, id: city.id}));
+//creating object from array, where city is the key for city ID
 const finalList = {};
 niceList.forEach(item => finalList[item.name] = item.id);
 
@@ -21,7 +21,7 @@ class Test extends Component {
     }
 
     findCity (event) {
-        this.setState({city: event.target.value})
+        this.setState({city: event.target.value});
     }
     findCityId ({city}) {
         return finalList.city;

@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Test from './component/Test'
+import Search from './component/Search'
 
 function App() {
     return <div>
-        <Test />
+        <Search />
     </div>;
 
 }
