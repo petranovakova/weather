@@ -4,9 +4,26 @@ import Search from './component/Search'
 
 function App() {
     return <div>
-        <Search />
+        <Search/>
     </div>;
-
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

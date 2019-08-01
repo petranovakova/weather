@@ -49,3 +49,87 @@ class Test extends Component {
 
 }
 export default Test;
+
+function groupBy (array, length) {
+    return array.reduce(function (acc, value) {
+
+        let myArray;
+        if (acc[value[length]]) {
+            myArray = acc[value[length]]
+        } else {
+            myArray = [];
+        }
+
+        myArray.push(value);
+        acc[value[length]] = myArray;
+
+
+        (acc[value[length]] = acc[value[length]] || []).push(value);
+        return acc;
+    }, {});
+}
+
+
+
+
+const result = [
+    {
+        key: 3,
+        values: ['one', 'two']
+    },
+    {
+        key: 5,
+        values: ['three']
+    }
+];
+
+const result2 = {
+    3: ['one', 'two'],
+    5: ['three']
+};
+
+
+
+
+const array = ['one', 'two', 'three'];
+
+//ukol pouzij reduce a spocitej sumu techto cisel a dale spocitej pomoci reduce maximum
+const cisla = [2, 9, 4];
+
+const suma = cisla.reduce(function (acc, val) {
+    return acc + val;
+});
+
+const maxim = cisla.reduce((acc, value) => acc > value ? acc : value);
+
+
+const hovna = [1, 2, 3, 4, 5, 6, 7];
+
+const coolArray = groupByArray(hovna, function (value) {
+    return value % 2 === 0 ? 'sudy' : 'lichy';
+});
+
+const slova = ['hovno', 'sracka', 'fekal', 'bobek', 'lejno', 'hajzl'];
+
+const rozdeleneDlePocatecnihoPismena = groupByArray(slova, (value) => {
+    return value.slice(0, 1);
+});
+console.log(rozdeleneDlePocatecnihoPismena);
+
+
+// console.log('coolArray', coolArray);
+
+
+const string = {
+    length: 4
+};
+
+
+return (<div>
+      {data.map(day => {
+            return <p key={day.key}>
+              {day.values}
+            </p>;
+          }
+      )}
+    </div>)
