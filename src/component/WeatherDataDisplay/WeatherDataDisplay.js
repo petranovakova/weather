@@ -2,9 +2,6 @@ import React from 'react';
 import groupBy from "../../function/groupBy";
 import DailyData from "../DailyData";
 
-function fromKelvinToCelsius(temperature) {
-    return (temperature - 273.15)
-}
 
 const WeatherDataDisplay = ({data, city}) => {
 
