@@ -1,5 +1,6 @@
 import React from 'react';
 import HourlyData from "../HourlyData";
+import Time from "../Time";
 
 const DailyData = ({data}) => {
     if (!data) {
