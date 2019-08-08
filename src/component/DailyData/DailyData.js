@@ -17,7 +17,7 @@ const DailyData = ({data}) => {
 
 
     return <div>
-        <div>{dayName}</div>
+        <div className="day">{dayName}</div>
         {data.values.map(hourBlock => {
             return (
                 <HourlyData data={hourBlock} key={hourBlock.dt}/>
